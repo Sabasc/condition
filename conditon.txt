@@ -1,0 +1,384 @@
+///navbar code
+
+import React from 'react';
+import { Card } from 'antd';
+
+const Navbar = ({ toggleComponent1, toggleComponent2 }) => {
+  return (
+    <Card
+      style={{
+        backgroundColor: '#00a8ff',
+        color: '#fff',
+        marginBottom: '10px',
+        height: '90px',
+        borderTopRightRadius: '5px',
+        borderTopLeftRadius: '5px',
+        borderBottomRightRadius: '0px',
+        borderBottomLeftRadius: '0px',
+        width:'85%',
+        display:'felx',
+        aligItems:'center',
+        justifyContent:'center',
+        position:'absolute',
+        left:'136px',
+        top:'25.5px'
+        
+      }}
+    >
+      <div
+        style={{
+          height: '50px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '4px'
+        }}
+      >
+        <h2>APP MODULES</h2>
+        <div
+          style={{
+            border: '1px solid #fff',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            width: '289px',
+            borderRadius: '95px',
+            margin: '10px',
+            marginLeft:'400px'
+          }}
+        >
+          <div className="button-box"style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+            <div id="btn">
+            <button
+              
+              onClick={toggleComponent1}
+              className="one"
+              style={{ backgroundColor: '#00a8ff', marginLeft: '20px' }}
+            >
+              Module_Wise
+            </button>
+
+            </div>
+            <button
+              type="button"
+              onClick={toggleComponent2}
+              className="one"
+              style={{ backgroundColor: '#00a8ff', marginLeft: '20px' }}
+            >
+              Screen_Wise
+            </button>
+          </div>
+        </div>
+        <input type="text" placeholder="Search" className="inputf" />
+      </div>
+    </Card>
+  );
+};
+
+export default Navbar;
+
+
+
+
+
+App 
+
+
+import React, { useState } from 'react';
+import './App.css';
+import { Card, Row, Col, Typography } from 'antd';
+import { DollarCircleOutlined, ShoppingCartOutlined, ShoppingOutlined, UserOutlined,DashboardOutlined ,SettingOutlined ,} from '@ant-design/icons';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+import Home from './Home'
+import Home1 from './Home1'
+import Navbar from './Navbar'
+import {Routes,Route,BrowserRouter}from 'react-router-dom'
+
+
+
+
+const App = () => {
+
+ 
+    const [showComponent1, setShowComponent1]= useState(true);
+
+  const toggleComponent1 =()=>{
+    setShowComponent1(true);
+  };
+
+  const toggleComponent2 =()=>{
+    setShowComponent1(false);
+  };
+  
+  return (
+  <div>
+       <Navbar toggleComponent1={toggleComponent1} toggleComponent2={toggleComponent2}/>
+      {showComponent1? <Home1/> : <Home/>}
+     </div>
+     
+  
+  
+  );
+};
+
+export default App;
+
+
+
+
+//Homeimport React from 'react';
+import './App.css';
+import { Card, Row, Col, Typography } from 'antd';
+import { HeartFilled ,} from '@ant-design/icons';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+
+
+const { Title, Text } = Typography;
+
+const cardData = [
+
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Dashboard',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Admin Dashboard',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Export',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Define Bank',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Payment Vocher',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Journal Vocher',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Chart of Account Report',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Day Book',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Account Allocation',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Payment Vocher',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Journal Vocher',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Chart of Account Report',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Day Book',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Dashboard',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Dashboard',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Dashboard',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Dashboard',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Dashboard',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Dashboard',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Dashboard',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Dashboard',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Dashboard',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Export Report',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Setting',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Dashboard',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Dashboard',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Analytical',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Admin',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Dashboard',
+  },
+  {
+    title: '3',
+    icon: <HeartFilled />,
+    description: 'Dashboard',
+  },
+
+ 
+];
+
+const Home = () => {
+  return (
+    <div 
+    style={{ 
+      border: '1px solid #00a8ff',
+      width:'85%',
+      marginTop:'50px',
+      marginBottom:'50px',
+      marginLeft:'10%',
+      paddingBottom:'10px',
+      borderTopRightRadius:'8px',
+      borderTopLeftRadius:'8px',
+     marginTop:'25px',
+      paddingTop:'100px' 
+    
+      }}>
+       {/* <NavBar /> */}
+      <Row gutter={[8, 16]} justify="center">
+        {cardData.map((card, index) => (
+          <Col xs={24} sm={12} md={8} lg={6} xl={6} key={index}>
+            <Card hoverable
+            className='move'
+            style={{
+              // width: '90%',  
+                height: 90,
+                margin: '30px',
+                // border: '1px solid #00a8ff',
+                marginLeft: 15,
+                marginRight: 20,
+                marginBottom:10,
+              }}>
+
+
+              <div style={{
+                  backgroundColor: '#00a8ff',
+                  color: '#fff',
+                  fontSize: '17px',
+                  fontWeight: 600,
+                  height: 45,
+                  // borderTopRightRadius: 6,
+                  // borderTopLeftRadius: 6,
+                  borderRadius:'80%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: 0,
+                  position:'absolute',
+                  top:'0px',
+                  right:'41px',
+                  width:'20%',
+                  position:'absolute',
+                  top:'-25px',
+                  left:'90px',
+                 
+            
+              
+                 }}>
+                <Title level={4} 
+                style={{
+                  color: '#fff',
+                  // backgroundColor: 'rgba(0,255,0,0.25)',
+                  borderRadius: 20,
+                  padding: 8,
+                  margin: 0,
+                  display:'flex',
+                  alignItems:'center',
+                  justifyContent:'center',
+                  fontSize:'1.5rem',
+                  }}   >
+                  {card.icon}
+                </Title>
+              </div>
+
+                  <br></br> 
+            
+
+
+              <Text style={{ display:'flex',
+                  alignItems:'center',
+                  justifyContent:'center',margin:0}}>{card.description}</Text>
+                  
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </div>
+  );
+};
+
+export default Home
+
